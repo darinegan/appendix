@@ -1,0 +1,14 @@
+VAGRANTFILE_API_VERSION = '2'
+Vagrant.require_version '>= 1.5.0'
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.hostname = 'berks.cookbook.foo-berkshelf'
+  config.omnibus.chef_version = 'latest' if Vagrant.has_plugin?('vagrant-omnibus')
+  config.cache.scope = :machine if Vagrant.has_plugin?('vagrant-cachier')
+  config.vm.box = 'chef/ubuntu-14.04'
+  config.berkshelf.enabled = true if Vagrant.has_plugin?('vagrant-berkshelf')
+  config.vm.provision :chef_zero do |chef|
+    chef.run_list = [
+      'recipe[berks.cookbook.foo::default]'
+    ]
+  end
+end
