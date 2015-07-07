@@ -11,7 +11,6 @@
 
 ### Software Engineer @ IBM
 ### Continuous Delivery, SmartCloud Notes
-### [www.nerdaga.in](http://www.nerdaga.in)
 ### ![inline](img/Twitter.png) [ImDarinEgan](https://twitter.com/ImDarinEgan)
 
 ---
